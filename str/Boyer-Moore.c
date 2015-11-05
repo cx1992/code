@@ -138,7 +138,7 @@ int boyer_moore(const char * text, const char * pattern)
 		}
 		else
 		{
-			/**< 不用好后缀位移可修改成const int max =i - right[(unsigned char)text[i + j]] */
+			/**< 不用好后缀位移可修改成const int max =max(1,i - right[(unsigned char)text[i + j]]) */
 			const int max = gs[i] > right[(unsigned char)text[i + j]]
 			                - m + 1 + i ? gs[i] : i - right[(unsigned char)text[i + j]];
 			j += max;
